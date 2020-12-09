@@ -10,6 +10,14 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, '../dist')
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, '../src/index.html')
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'styles/[name].[contenthash].css'
+        })
+    ],
     module: {
         rules: [
             {
@@ -31,13 +39,5 @@ module.exports = {
                 }
             }
         ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../src/index.html')
-        }),
-        new MiniCssExtractPlugin({
-            filename: 'styles/[name].[contenthash].css'
-        })
-    ]
+    }
 };
