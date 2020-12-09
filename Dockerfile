@@ -4,7 +4,6 @@ WORKDIR /app
 COPY . ./
 RUN yarn
 RUN yarn build
-RUN ls
 
 # Stage: 2 Prod build
 FROM nginx:1.16.0-alpine
