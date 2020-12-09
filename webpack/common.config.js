@@ -1,13 +1,13 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-    mode: 'development',
     entry: { 
-        index: path.resolve(__dirname, "src", "index.js") 
+        index: path.resolve(__dirname, "../src/index.js") 
     },
     output: {
-        path: path.resolve(__dirname, "dist")
+        path: path.resolve(__dirname, "../dist")
     },
     module: {
         rules: [
@@ -22,12 +22,9 @@ module.exports = {
           }
         ]
       },
-    optimization: {
-        splitChunks: { chunks: "all" }
-    },
     plugins: [
         new HtmlWebpackPlugin({
-          template: path.resolve(__dirname, "src", "index.html")
+          template: path.resolve(__dirname, "../src/index.html")
         })
     ],
 };
