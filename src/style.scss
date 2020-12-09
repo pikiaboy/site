@@ -1,9 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Karla:weight@400;700&display=swap');
+$app: 'tp_app';
+$content: 'tp_content';
 
-$font: 'Karla', sans-serif;
-$primary-color: #3e6f9e;
+html {
+    padding: 0.5rem;
+    font-size: 14px;
+}
 
-body {
-    font-family: $font;
-    color: $primary-color;
+.#{$app} {
+    display: flex;
+    gap: 10rem;
+
+    background-color: #fff;
+    background-image: linear-gradient(#eee 0.1em, transparent 0.1em);
+    background-size: 100% 1.2em;
+    .#{$content} {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

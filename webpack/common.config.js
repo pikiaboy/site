@@ -14,8 +14,7 @@ module.exports = {
         rules: [
             {
                 test: /\.((c|sa|sc)ss)$/,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
-                include: path.resolve('node_modules')
+                use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
                 test: /\.js$/,
