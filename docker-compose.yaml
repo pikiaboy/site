@@ -1,4 +1,4 @@
-version: "3"
+version: '3'
 
 networks:
     web:
@@ -11,7 +11,7 @@ services:
             context: .
             dockerfile: Dockerfile
         volumes:
-            - ".:/app"
+            - '.:/app'
         networks:
             - web
         environment:

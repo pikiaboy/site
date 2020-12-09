@@ -1,38 +1,38 @@
 {
-  "name": "resumesite",
-  "version": "1.0.0",
-  "description": "My Resumue Site",
-  "main": "src/index.js",
-  "scripts": {
-    "build": "webpack --config webpack/prod.config.js --mode=production",
-    "clean": "rm -rf node_modules",
-    "dev": "webpack --config webpack/dev.config.js --mode=development",
-    "test": "npm run test",
-    "start": "webpack serve --open --config webpack/dev.config.js --env development"
-  },
-  "author": "Thomas Pham",
-  "license": "ISC",
-  "dependencies": {
-    "react": "17.0.1",
-    "react-dom": "17.0.1"
-  },
-  "devDependencies": {
-    "@babel/core": "7.12.9",
-    "@babel/preset-env": "7.12.7",
-    "@babel/preset-react": "7.12.7",
-    "babel-loader": "8.2.2",
-    "css-loader": "5.0.1",
-    "html-webpack-plugin": "5.0.0-alpha.15",
-    "sass": "1.30.0",
-    "sass-loader": "10.1.0",
-    "style-loader": "2.0.0",
-    "webpack": "5.10.0",
-    "webpack-cli": "4.2.0",
-    "webpack-dev-server": "4.0.0-beta.0",
-    "webpack-merge": "5.4.0"
-  },
-  "engines": {
-    "node": ">=15.3.0",
-    "npm": ">=7.0.14"
-  }
+    "name": "resumesite",
+    "version": "1.0.0",
+    "description": "My Resumue Site",
+    "main": "src/index.js",
+    "scripts": {
+        "build": "webpack --config webpack/prod.config.js --mode=production",
+        "clean": "rm -rf node_modules",
+        "dev": "webpack --config webpack/dev.config.js --mode=development",
+        "test": "npm run test",
+        "start": "webpack serve --open --config webpack/dev.config.js --env development"
+    },
+    "author": "Thomas Pham",
+    "license": "ISC",
+    "dependencies": {
+        "react": "17.0.1",
+        "react-dom": "17.0.1"
+    },
+    "devDependencies": {
+        "@babel/core": "7.12.9",
+        "@babel/preset-env": "7.12.7",
+        "@babel/preset-react": "7.12.7",
+        "babel-loader": "8.2.2",
+        "css-loader": "5.0.1",
+        "html-webpack-plugin": "5.0.0-alpha.15",
+        "sass": "1.30.0",
+        "sass-loader": "10.1.0",
+        "style-loader": "2.0.0",
+        "webpack": "5.10.0",
+        "webpack-cli": "4.2.0",
+        "webpack-dev-server": "4.0.0-beta.0",
+        "webpack-merge": "5.4.0"
+    },
+    "engines": {
+        "node": ">=15.3.0",
+        "npm": ">=7.0.14"
+    }
 }

@@ -1,0 +1,7 @@
+dist
+node_modules
+
+*.html
+Dockerfile
+docker-compose.yaml
+yarn.lock
