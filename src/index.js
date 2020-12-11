@@ -3,7 +3,7 @@ import './style.scss';
 
 import Content from './Home/Content';
 import React from 'react';
-import SideBar from './Home/SideBar';
+import SideBar from './Home/Sidebar';
 import { render } from 'react-dom';
 
 const App = () => {
