@@ -20,17 +20,26 @@ const SideBar = () => {
                     name="blog"
                     active={activeItem === 'blog'}
                     onClick={handleItemClick}
-                />
+                >
+                    <Icon name="book" />
+                    Blog
+                </Menu.Item>
                 <Menu.Item
                     name="projects"
                     active={activeItem === 'projects'}
                     onClick={handleItemClick}
-                />
+                >
+                    <Icon name="folder open" />
+                    Projects
+                </Menu.Item>
                 <Menu.Item
                     name="resume"
                     active={activeItem === 'resume'}
                     onClick={handleItemClick}
-                />
+                >
+                    <Icon name="terminal" />
+                    Resume
+                </Menu.Item>
             </Menu>
 
             <span className="tp_linkList">
