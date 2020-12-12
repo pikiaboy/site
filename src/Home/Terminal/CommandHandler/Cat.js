@@ -14,17 +14,23 @@ const Cat = (arguements) => {
     }
 
     if (!Object.keys(files).includes(arguements[0])) {
-        return <span>{arguements[0]} does not exist!</span>;
+        return (
+          <span>
+            {arguements[0]}
+            {' '}
+            does not exist!
+          </span>
+);
     }
 
     return (
-        <>
-            <Suspense fallback={<div>Loading...</div>}>
-                {files[arguements[0]]}
-            </Suspense>
-        </>
+      <Suspense fallback={<div>Loading...</div>}>
+        {files[arguements[0]]}
+      </Suspense>
     );
 };
+
+Cat.propTypes = {};
 
 export default Cat;
 

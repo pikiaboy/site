@@ -1,7 +1,11 @@
-import Prompt from '../Pormpt';
 import React from 'react';
 import { v1 as uuidv4 } from 'uuid';
+import Prompt from '../Pormpt';
 
+/**
+ * @argument setPrompts -> state setting function from parent.
+ * @argument addPrompt -> function to add a new prompt to the terminal.
+ */
 const clearScreen = (setPrompts, addPrompt) => {
     /**
      * We return an array that references a new empty array to deal with state clousers. 

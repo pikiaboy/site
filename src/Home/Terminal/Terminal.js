@@ -1,11 +1,12 @@
+/* eslint-disable no-use-before-define */
 import './style.scss';
 
 import React, { useState } from 'react';
 
 import Draggable from 'react-draggable';
-import Prompt from './Pormpt';
-import { commands } from './constants';
 import { v1 as uuidv4 } from 'uuid';
+import Prompt from './Pormpt';
+import { commands } from './CommandHandler/constants';
 
 const Terminal = () => {
     const [prompts, setPrompts] = useState([
@@ -24,10 +25,12 @@ const Terminal = () => {
             ...oldPrompts,
             <Prompt
                 key={uuidv4()}
-                onCommand={(command) => addPrompt(changedPrompts, command)}
+                onCommand={(currentCommand) =>
+                    addPrompt(changedPrompts, currentCommand)
+                }
             />
         ];
-        setPrompts(changedPrompts);
+        return setPrompts(changedPrompts);
     };
 
     return (

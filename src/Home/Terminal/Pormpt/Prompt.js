@@ -1,9 +1,9 @@
-import './style.scss';
-
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import CommandHandler from '../CommandHandler/CommandHandler';
-import { commands as listOfCommands } from '../constants';
+import { commands as listOfCommands } from '../CommandHandler/constants';
+import './style.scss';
 
 const Prompt = ({ onCommand }) => {
     const [inputDisabled, setInputDisabled] = useState(false);
@@ -32,8 +32,8 @@ const Prompt = ({ onCommand }) => {
     return (
         <div className="tp_terminal_prompt">
             <code className="tp_terminal_dir">
-                <span style={{ color: '#009c9c' }}>thomas@tpham.dev</span>:{' '}
-                <span style={{ color: 'blue' }}>~</span>
+                <span style={{ color: '#009c9c' }}>thomas@tpham.dev</span>:
+                <span style={{ color: 'blue' }}> ~</span>
             </code>
             <div className="tp_terminal_input">
                 <span style={{ fontSize: '.8rem' }}>ᐅ</span>
@@ -50,6 +50,13 @@ const Prompt = ({ onCommand }) => {
             </div>
         </div>
     );
+};
+
+Prompt.propTypes = {
+    /**
+     * Callback to tell the parent which command was just used
+     */
+    onCommand: PropTypes.func
 };
 
 export default Prompt;

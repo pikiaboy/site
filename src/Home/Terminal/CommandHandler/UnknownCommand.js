@@ -1,7 +1,5 @@
 import React from 'react';
 
-const UnknownCommand = () => {
-    return <span />;
-};
+const UnknownCommand = () => <span />;
 
 export default UnknownCommand;

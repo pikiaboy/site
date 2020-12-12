@@ -1,18 +1,16 @@
 import 'semantic-ui-css/semantic.min.css';
 import './style.scss';
 
-import Content from './Home/Content';
 import React from 'react';
-import SideBar from './Home/Sidebar';
 import { render } from 'react-dom';
+import Content from './Home/Content';
+import SideBar from './Home/Sidebar';
 
-const App = () => {
-    return (
-        <div className="tp_app">
-            <SideBar />
-            <Content />
-        </div>
+const App = () => (
+  <div className="tp_app">
+    <SideBar />
+    <Content />
+  </div>
     );
-};
 
 render(<App />, document.getElementById('root'));

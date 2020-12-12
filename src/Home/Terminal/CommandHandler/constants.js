@@ -1,7 +1,7 @@
-import Cat from './CommandHandler/Cat';
-import ClearScreen from './CommandHandler/clearScreen';
-import LS from './CommandHandler/ls';
-import UnknownCommand from './CommandHandler/UnknownCommand';
+import Cat from './Cat';
+import ClearScreen from './clearScreen';
+import LS from './ls';
+import UnknownCommand from './UnknownCommand';
 
 const commands = {
     cat: {
