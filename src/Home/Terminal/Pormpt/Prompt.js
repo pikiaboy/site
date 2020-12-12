@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+/* eslint-disable import/no-cycle */
+import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import CommandHandler from '../CommandHandler/CommandHandler';
 import { commands as listOfCommands } from '../CommandHandler/constants';
 import './style.scss';
 
-const Prompt = ({ onCommand }) => {
+const Prompt = ({ focused, onCommand }) => {
     const [inputDisabled, setInputDisabled] = useState(false);
     const [command, setCommand] = useState('');
     const [arguements, setArguements] = useState([]);
+    const inputRef = useRef(null);
+
+    if (focused) {
+        inputRef.current?.focus();
+    }
 
     const handleKeyDown = (e) => {
         const { code, ctrlKey, key, target } = e;
@@ -36,12 +42,13 @@ const Prompt = ({ onCommand }) => {
                 <span style={{ color: 'blue' }}> ~</span>
             </code>
             <div className="tp_terminal_input">
-                <span style={{ fontSize: '.8rem' }}>ᐅ</span>
+                <span style={{ fontSize: '.8rem', paddingTop: '5px' }}>ᐅ</span>
                 <input
                     autoFocus
                     disabled={inputDisabled}
                     className="tp_actual_input"
                     onKeyDown={handleKeyDown}
+                    ref={inputRef}
                     spellCheck={false}
                 />
             </div>
@@ -53,6 +60,11 @@ const Prompt = ({ onCommand }) => {
 };
 
 Prompt.propTypes = {
+    /**
+     * True if the current prompt should be focused.
+     */
+    focused: PropTypes.bool,
+
     /**
      * Callback to tell the parent which command was just used
      */

@@ -1,10 +1,11 @@
 import React, { Suspense } from 'react';
 
-const AboutMe = React.lazy(() => import('./AboutMe'));
+const AboutMe = React.lazy(() => import('./files/AboutMe'));
+const CurrentJob = React.lazy(() => import('./files/CurrentJob'));
 
 const files = {
     'about-me.txt': <AboutMe />,
-    'current-job.txt': <div>Veeva Systems</div>,
+    'current-job.txt': <CurrentJob />,
     'fun-facts.txt': <div>This is not a real terminal!</div>
 };
 
@@ -14,19 +15,13 @@ const Cat = (arguements) => {
     }
 
     if (!Object.keys(files).includes(arguements[0])) {
-        return (
-          <span>
-            {arguements[0]}
-            {' '}
-            does not exist!
-          </span>
-);
+        return <span>{arguements[0]} does not exist!</span>;
     }
 
     return (
-      <Suspense fallback={<div>Loading...</div>}>
-        {files[arguements[0]]}
-      </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+            {files[arguements[0]]}
+        </Suspense>
     );
 };
 

@@ -20,11 +20,12 @@ $terminalOutput: 'tp_terminal_output';
 
             .#{$terminalActualInput} {
                 background-color: transparent;
-                border: transparent;
+                border: 0;
                 color: white;
                 font-family: monospace;
                 font-size: 1rem;
                 outline: transparent;
+                padding: 0;
                 padding-left: 1rem;
                 width: 100%;
             }

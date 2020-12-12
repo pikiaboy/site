@@ -1,3 +1,5 @@
+/* eslint-disable import/no-cycle */
+import React from 'react';
 import Cat from './Cat';
 import ClearScreen from './clearScreen';
 import LS from './ls';
@@ -20,6 +22,10 @@ const commands = {
     '': {
         value: '',
         callback: UnknownCommand
+    },
+    sudo: {
+        value: 'sudo',
+        callback: () => <div>Lol, you wish</div>
     }
 };
 

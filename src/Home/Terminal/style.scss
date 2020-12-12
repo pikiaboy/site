@@ -9,7 +9,7 @@ $terminalOutput: 'tp_terminal_output';
 
 .#{$terminal} {
     height: 500px;
-    width: 50vw;
+    width: 40vw;
     background-color: rgb(61, 59, 59);
     border-radius: 10px;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
@@ -18,14 +18,19 @@ $terminalOutput: 'tp_terminal_output';
 
     .#{$terminalHeader} {
         display: flex;
+        align-items: center;
+        justify-content: center;
+
         width: 100%;
         height: 30px;
-        align-items: center;
         padding: 0 8px;
+
+        background: linear-gradient(#504b45 0%, #3c3b37 100%);
+        color: rgb(0, 156, 156);
+        cursor: move;
         box-sizing: border-box;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
-        background: linear-gradient(#504b45 0%, #3c3b37 100%);
     }
 
     .#{$terminalBody} {

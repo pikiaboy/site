@@ -1,3 +1,11 @@
+const a11yOff = Object.keys(require('eslint-plugin-jsx-a11y').rules).reduce(
+    (acc, rule) => {
+        acc[`jsx-a11y/${rule}`] = 'off';
+        return acc;
+    },
+    {}
+);
+
 module.exports = {
     env: {
         browser: true,
@@ -19,10 +27,10 @@ module.exports = {
     plugins: ['react'],
     ignorePatterns: ['node_modules', 'dist', 'webpack/*'],
     rules: {
+        ...a11yOff,
         'import/prefer-default-export': 'off',
         'react/jsx-filename-extension': 'off',
         'react/no-unescaped-entities': 'off',
-        'react/require-default-props': 'off',
-        'jsx-a11y/no-autofocus': 'off'
+        'react/require-default-props': 'off'
     }
 };
