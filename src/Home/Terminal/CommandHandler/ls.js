@@ -7,7 +7,7 @@ const LS = () => {
 
     return (
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-            {listFiles().concat(listFiles().concat(listFiles()))}
+            {listFiles()}
         </div>
     );
 };
