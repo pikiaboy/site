@@ -4,6 +4,9 @@ const { merge } = require('webpack-merge');
 
 module.exports = merge(commonConfig, {
     mode: 'production',
+    output: {
+        publicPath: ''
+    },
     stats: {
         warnings: false
     },
@@ -11,7 +14,8 @@ module.exports = merge(commonConfig, {
         minimize: true,
         minimizer: [new TerserPlugin()],
         splitChunks: {
-            chunks: 'all'
+            chunks: 'all',
+            maxSize: 244
         }
     }
 });
