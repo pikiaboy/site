@@ -1,0 +1,38 @@
+$terminalBody: 'tp_terminal_body';
+$terminalPrompt: 'tp_terminal_prompt';
+$terminalDir: 'tp_terminal_dir';
+$terminalInput: 'tp_terminal_input';
+$terminalActualInput: 'tp_actual_input';
+$terminalOutput: 'tp_terminal_output';
+
+.#{$terminalBody} {
+    .#{$terminalPrompt} {
+        display: flex;
+        flex-direction: column;
+
+        .#{$terminalDir} {
+            margin-left: 5px;
+        }
+
+        .#{$terminalInput} {
+            display: flex;
+            margin-left: 15px;
+
+            .#{$terminalActualInput} {
+                background-color: transparent;
+                border: 0;
+                color: white;
+                font-family: monospace;
+                font-size: 1rem;
+                outline: transparent;
+                padding: 0;
+                padding-left: 1rem;
+                width: 100%;
+            }
+
+            .#{$terminalActualInput}:focus {
+                border: transparent;
+            }
+        }
+    }
+}
