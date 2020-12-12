@@ -2,8 +2,8 @@ import './style.scss';
 
 import React, { useState } from 'react';
 
+import Draggable from 'react-draggable';
 import Prompt from './Pormpt';
-import clearScreen from './CommandHandler/clearScreen';
 import { commands } from './constants';
 import { v1 as uuidv4 } from 'uuid';
 
@@ -31,12 +31,14 @@ const Terminal = () => {
     };
 
     return (
-        <div className="tp_terminal">
-            <div className="tp_terminal_header">Header</div>
-            <div style={{ marginBottom: 0 }} className="tp_terminal_body">
-                {prompts}
+        <Draggable handle=".tp_terminal_header" scale={1}>
+            <div className="tp_terminal">
+                <div className="tp_terminal_header">Header</div>
+                <div style={{ marginBottom: 0 }} className="tp_terminal_body">
+                    {prompts}
+                </div>
             </div>
-        </div>
+        </Draggable>
     );
 };
 
