@@ -1,9 +1,9 @@
 import React from 'react';
-import { myFiles as files } from './Cat';
+import { files } from './Cat';
 
 const LS = () => {
     const listFiles = () => {
-        return files.map((file) => {
+        return Object.keys(files).map((file) => {
             return <div key={file}>{file}</div>;
         });
     };

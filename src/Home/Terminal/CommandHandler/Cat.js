@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 
 const AboutMe = React.lazy(() => import('./AboutMe'));
 
-const myFiles = {
+const files = {
     'about-me.txt': <AboutMe />,
     'current-job.txt': <div>Veeva Systems</div>,
     'fun-facts.txt': <div>This is not a real terminal!</div>
@@ -13,14 +13,14 @@ const Cat = (arguements) => {
         return <span>I don't support catting out multiple files yet!</span>;
     }
 
-    if (!Object.keys(myFiles).includes(arguements[0])) {
+    if (!Object.keys(files).includes(arguements[0])) {
         return <span>{arguements[0]} does not exist!</span>;
     }
 
     return (
         <>
             <Suspense fallback={<div>Loading...</div>}>
-                {myFiles[arguements[0]]}
+                {files[arguements[0]]}
             </Suspense>
         </>
     );
@@ -28,4 +28,4 @@ const Cat = (arguements) => {
 
 export default Cat;
 
-export { myFiles };
+export { files };
