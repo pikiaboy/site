@@ -4,6 +4,7 @@ import Cat from './Cat';
 import ClearScreen from './clearScreen';
 import LS from './ls';
 import UnknownCommand from './UnknownCommand';
+import Open from './Open';
 
 const commands = {
     cat: {
@@ -17,6 +18,10 @@ const commands = {
     ls: {
         value: 'ls',
         callback: LS
+    },
+    open: {
+        value: 'open',
+        callback: Open
     },
     screenFetch: 'screenfetch',
     '': {
