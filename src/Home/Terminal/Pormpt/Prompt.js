@@ -17,7 +17,7 @@ const Prompt = ({ focused, onCommand }) => {
     }
 
     const handleKeyDown = (e) => {
-        const { code, ctrlKey, key, target } = e;
+        const { ctrlKey, key, target } = e;
 
         if ((ctrlKey && key === 'l') || target.value === 'clear') {
             setInputDisabled(true);
@@ -25,14 +25,14 @@ const Prompt = ({ focused, onCommand }) => {
             return;
         }
 
-        if (code !== 'Enter') {
-            return;
+        if (key === 'Enter') {
+            setInputDisabled(true);
+            setCommand(target.value.split(' ')[0]);
+            setArguements(target.value.split(' ').slice(1));
+            onCommand(target.value);    
         }
 
-        setInputDisabled(true);
-        setCommand(target.value.split(' ')[0]);
-        setArguements(target.value.split(' ').slice(1));
-        onCommand(target.value);
+        return;
     };
 
     return (
@@ -53,7 +53,7 @@ const Prompt = ({ focused, onCommand }) => {
                 />
             </div>
             <div className="tp_terminal_output">
-                <CommandHandler arguements={arguements} command={command} />
+                {CommandHandler.handle(arguements, command)}
             </div>
         </div>
     );

@@ -6,27 +6,32 @@ import LS from './ls';
 import UnknownCommand from './UnknownCommand';
 import Open from './Open';
 
+
+const createCommand = (Command) => {
+    return (arguements) => <Command arguements={arguements} />;
+}
+
 const commands = {
     cat: {
         value: 'cat',
-        callback: Cat
+        callback: createCommand(Cat)
     },
     CLEAR_SCREEN: {
         value: 'CLEAR_SCREEN',
-        callback: ClearScreen
+        callback: createCommand(ClearScreen)
     },
     ls: {
         value: 'ls',
-        callback: LS
+        callback: createCommand(LS)
     },
     open: {
         value: 'open',
-        callback: Open
+        callback: createCommand(Open)
     },
     screenFetch: 'screenfetch',
     '': {
         value: '',
-        callback: UnknownCommand
+        callback: createCommand(UnknownCommand)
     },
     sudo: {
         value: 'sudo',
