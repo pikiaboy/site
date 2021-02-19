@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import UnknownCommand from './UnknownCommand';
 import { commands as listOfCommands } from './constants';
 
-const CommandHandler = ({ arguements, command }) => {
+/**
+ * 
+ * @param {array} arguements An array of arguements passed to the command 
+ * @param {string} command The name of the command 
+ */
+const handle = (arguements = [], command) => {
     const commandToExecute = listOfCommands[command]
         ? listOfCommands[command].callback
         : UnknownCommand;
@@ -11,9 +16,6 @@ const CommandHandler = ({ arguements, command }) => {
     return commandToExecute(arguements);
 };
 
-CommandHandler.propTypes = {
-    arguements: PropTypes.arrayOf(PropTypes.string),
-    command: PropTypes.string
-};
-
-export default CommandHandler;
+export default {
+    handle
+}
