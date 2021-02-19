@@ -15,7 +15,7 @@ const Terminal = () => {
         <Prompt
             key={uuidv4()}
             onCommand={(command) => addPrompt(prompts, command)}
-        />
+        />,
     ]);
 
     const addPrompt = (oldPrompts, command) => {
@@ -31,7 +31,7 @@ const Terminal = () => {
                 onCommand={(currentCommand) =>
                     addPrompt(changedPrompts, currentCommand)
                 }
-            />
+            />,
         ];
         return setPrompts(changedPrompts);
     };
@@ -51,7 +51,7 @@ const Terminal = () => {
         const currentPrompt = prompts.slice(prompts.length - 1)[0];
         setPrompts([
             ...prompts.slice(0, prompts.length - 1),
-            React.cloneElement(currentPrompt, { focused: true })
+            React.cloneElement(currentPrompt, { focused: true }),
         ]);
     };
 
