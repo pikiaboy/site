@@ -17,7 +17,7 @@ services:
         environment:
             - NODE_ENV=production
         labels:
-            - traefik.http.routers.resume.rule=Host(`tpham.dev`)
+            - traefik.http.routers.resume.rule=Host(`tpham.dev`, `www.tpham.dev`)
             - traefik.http.routers.resume.tls=true
             - traefik.http.routers.resume.tls.certresolver=mydnschallenge
             - traefik.port=80
