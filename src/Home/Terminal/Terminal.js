@@ -21,7 +21,8 @@ const Terminal = () => {
     const addPrompt = (oldPrompts, command) => {
         if (command === commands.CLEAR_SCREEN.value) {
             setShowLoginMessage(false);
-            return commands.CLEAR_SCREEN.callback(setPrompts, addPrompt);
+            commands.CLEAR_SCREEN.callback(setPrompts, addPrompt);
+            return;
         }
 
         const changedPrompts = [

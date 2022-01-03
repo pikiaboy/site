@@ -11,6 +11,10 @@ const createCommand = (Command) => {
     return (arguements) => <Command arguements={arguements} />;
 }
 
+const clearScreenHandler = (setPrompt, addPrompt) => {
+    ClearScreen(setPrompt, addPrompt);
+}
+
 const commands = {
     cat: {
         value: 'cat',
@@ -18,7 +22,7 @@ const commands = {
     },
     CLEAR_SCREEN: {
         value: 'CLEAR_SCREEN',
-        callback: createCommand(ClearScreen)
+        callback: (setPrompt, addPrompt) => clearScreenHandler(setPrompt, addPrompt)
     },
     ls: {
         value: 'ls',

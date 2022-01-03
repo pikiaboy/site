@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import CommandHandler from '../CommandHandler/CommandHandler';
-import { commands as listOfCommands } from '../CommandHandler/constants';
+import { commands } from '../CommandHandler/constants';
 import './style.scss';
 
 const Prompt = ({ focused, onCommand }) => {
@@ -21,18 +21,16 @@ const Prompt = ({ focused, onCommand }) => {
 
         if ((ctrlKey && key === 'l') || target.value === 'clear') {
             setInputDisabled(true);
-            onCommand(listOfCommands.CLEAR_SCREEN.value);
-            return;
+            return onCommand(commands.CLEAR_SCREEN.value);
         }
 
         if (key === 'Enter') {
             setInputDisabled(true);
-            setCommand(target.value.split(' ')[0]);
-            setArguements(target.value.split(' ').slice(1));
+            const commandsAndArgs = target.value.split(' '); 
+            setCommand(commandsAndArgs[0]);
+            setArguements(commandsAndArgs.slice(1));
             onCommand(target.value);    
         }
-
-        return;
     };
 
     return (
